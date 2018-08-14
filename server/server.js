@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
 import config from './config/config';
+import router from './routes/signin.route';
 
 const app = express();
 
@@ -24,6 +25,9 @@ mongoose.connect(config.db, { useNewUrlParser: true }, (err) => {
 app.get('/', (req, res) => {
     res.send('Hello express server');
 });
+
+// signup route
+app.use('/users', router);
 
 app.listen(config.apiPort, () => {
     console.log(`[Server] listening on port ${config.apiPort}`);
