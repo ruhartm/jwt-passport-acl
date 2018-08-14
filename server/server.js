@@ -9,17 +9,16 @@ const app = express();
 app.use(morgan('dev'));
 
 // Mongodb connection
-mongoose.connect(config.db, (err) => {
+mongoose.connect(config.db, { useNewUrlParser: true }, (err) => {
     if (err) {
         console.log(`[MongoDB] Failed to connect. ${err}`);
     }
 });
 
-app.get("/", (req, res) => {
-    res.send("Hello express server")
-})
+app.get('/', (req, res) => {
+    res.send('Hello express server');
+});
 
 app.listen(config.apiPort, () => {
     console.log(`[Server] listening on port ${config.apiPort}`);
 });
-

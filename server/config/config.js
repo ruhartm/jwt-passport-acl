@@ -1,11 +1,11 @@
 
 
 const defaultConfig = {
-    db: 'mongodb://localhost:27017/jwtpassauth', 
+    db: 'mongodb://localhost:27017/jwtpassauth',
     apiPort: 3001,
     jwt: {
         session: false,
-        secret: 'MY_SECRET' 
+        secret: 'MY_SECRET'
     }
 };
 
