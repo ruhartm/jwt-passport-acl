@@ -3,7 +3,7 @@
 Zustandslose Authentifizierung und Authorisierung 
 Express, Mongoose, Passport, JWT, node-acl, ES6 
 
-Die Entwicklung Gliedert sich in 3 Bereiche
+Die Entwicklung gliedert sich in 3 Bereiche
 
 1. Teil
 Ohne Mongoose Anbindung (Passwort und User wird nur mit Mock-Daten authentifiziert).
