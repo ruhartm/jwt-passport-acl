@@ -13,6 +13,7 @@ Die Entwicklung Gliedert sich in 3 Bereiche
 
 
 
-**Referenzen und Quellen**
-Ein besonder Dank an folgende Blogs:
+**Referenzen und Quellen** 
+
+Ein besonder Dank an folgende Blogs:  
 [Stateless Auth with Express, Passport, Jwt](https://medium.com/@paul.allies/stateless-auth-with-express-passport-jwt-7a55ffae0a5c)
