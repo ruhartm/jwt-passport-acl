@@ -1,12 +1,18 @@
 import express from 'express';
-import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
 import morgan from 'morgan';
+import mongoose from 'mongoose';
 import config from './config/config';
 
 const app = express();
 
 // HTTP request logger
 app.use(morgan('dev'));
+
+// HTTP request body paser
+// if extended is false, you can not post "nested object"
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Mongodb connection
 mongoose.connect(config.db, { useNewUrlParser: true }, (err) => {
