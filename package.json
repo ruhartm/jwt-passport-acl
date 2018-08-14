@@ -2,21 +2,11 @@
   "name": "jwt-passport-acl",
   "version": "0.0.1",
   "description": "Express, Mongoose, JWT, Passport und node-acl Authentifizierung und Autorisierung",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "server/server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ruhartm/jwt-passport-acl.git"
+    "url": "https://github.com/ruhartm/jwt-passport-acl.git"
   },
-  "keywords": [
-    "express",
-    "mongoose",
-    "jwt",
-    "passport",
-    "nod-acl"
-  ],
   "author": "Rudolf Hartmann",
   "license": "MIT",
   "bugs": {
@@ -27,6 +17,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.2.8",
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0"
@@ -35,5 +26,8 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "nodemon": "^1.18.3"
+  },
+  "scripts": {
+    "serve": "NODE_ENV=dev nodemon server/server.js --exec babel-node"
   }
 }
