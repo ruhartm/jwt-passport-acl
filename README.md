@@ -6,10 +6,11 @@ Express, Mongoose, Passport, JWT, node-acl, ES6
 Die Entwicklung Gliedert sich in 3 Bereiche
 
 1. Teil
-⋅⋅⋅ ohne Mongoose Anbindung (Passwort und User wird nur mit Mock-Daten authentifiziert).
+Ohne Mongoose Anbindung (Passwort und User wird nur mit Mock-Daten authentifiziert).
 
 2. Teil
-... User daten werden mit bcrypt verschlüsselt und gegen eine Mongodb Datenbank geprüft. 
+User daten werden mit bcrypt verschlüsselt und gegen eine Mongodb Datenbank geprüft. 
+
 
 
 
