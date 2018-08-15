@@ -15,6 +15,7 @@ const {
     ExtractJwt
 } = passportJwt;
 
+// set the password strategy
 function setJwtStrategy() {
     const opts = {
         jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),

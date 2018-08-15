@@ -2,9 +2,9 @@ import jwt from 'jsonwebtoken';
 import express from 'express';
 import config from '../config/config';
 
-const router = express.Router();
+const signin = express.Router();
 
-router.post('/signin', (req, res) => {
+signin.post('/signin', (req, res) => {
     const { email, password } = req.body;
     // This lookup would normally be done using a database
     if (email === 'rh@trueinnovation.de') {
@@ -23,4 +23,4 @@ router.post('/signin', (req, res) => {
     return res.status(401).json({ message: 'Auth Failed' });
 });
 
-export default router;
+export default signin;

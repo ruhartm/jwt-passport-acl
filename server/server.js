@@ -4,8 +4,10 @@ import morgan from 'morgan';
 import mongoose from 'mongoose';
 import config from './config/config';
 import auth from './config/authenticate';
-import router from './routes/signin.route';
+import signin from './routes/signin.route';
+import signup from './routes/signup.route';
 
+// use express
 const app = express();
 
 // HTTP request logger
@@ -23,17 +25,20 @@ mongoose.connect(config.db, { useNewUrlParser: true }, (err) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Setup passport authentification
+// setup passport authentification
 app.use(auth.initialize());
 auth.setJwtStrategy();
 
-// Start Routes
+// start Routes
 app.get('/', (req, res) => {
     res.send('Hello express server');
 });
 
-// signup route
-app.use('/users', router);
+// signin route
+app.use('/users', signin);
+// singup route
+app.use('/users', signup);
+
 
 // passport authentification route
 app.get('/protected', auth.authenticate(), (req, res) => res.status(200).send('access to protected Route'));
