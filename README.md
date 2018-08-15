@@ -5,18 +5,15 @@ Stateless Authentication and Authorization Express, Mongoose, Passport, JWT, nod
 The development is divided into 3 areas
 
   1.Part 
-  Without Mongoose connection (password and user is only authenticated with mock data).
-  
+  Without Mongoose connection (password and user is only authenticated with mock data).    
   **branch feature/part1**
 
   2.Part 
-  User data is encrypted with bcrypt and checked against a Mongodb database.
-  
+  User data is encrypted with bcrypt and checked against a Mongodb database.      
   **branch feature/part2**
   
   3.Part
-  Node-acl is used to create access rights for groups and roles.
-  
+  Node-acl is used to create access rights for groups and roles.     
   **branch feature/part3**
 
 Blogs on this subject that I enjoy reading. 
