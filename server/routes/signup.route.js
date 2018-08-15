@@ -6,14 +6,12 @@ import User from '../models/user.model';
 const signup = express.Router();
 
 signup.post('/signup', (req, res) => {
-    // eslint-disable-next-line
     bcrypt.hash(req.body.password, 10, (err, hash) => {
         if (err) {
             return res.status(500).json({
                 err
             });
         }
-        console.log(hash);
 
         const user = new User({
             _id: new mongoose.Types.ObjectId(),
@@ -29,6 +27,7 @@ signup.post('/signup', (req, res) => {
                 error
             });
         });
+        return false;
     });
 });
 
