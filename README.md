@@ -1,20 +1,21 @@
 # jwt-passport-acl
 
-Zustandslose Authentifizierung und Authorisierung 
-Express, Mongoose, Passport, JWT, node-acl, ES6 
+Stateless Authentication and Authorization Express, Mongoose, Passport, JWT, node-acl, ES6
 
-Die Entwicklung gliedert sich in 3 Bereiche
+The development is divided into 3 areas
 
-1. Teil
-Ohne Mongoose Anbindung (Passwort und User wird nur mit Mock-Daten authentifiziert).
+  1.Part 
+  Without Mongoose connection (password and user is only authenticated with mock data).
 
-2. Teil
-User daten werden mit bcrypt verschlüsselt und gegen eine Mongodb Datenbank geprüft. 
+  2.Part 
+  User data is encrypted with bcrypt and checked against a Mongodb database.
+  
+  3.Part
+  Node-acl is used to create access rights for groups and roles.
 
 
-
-
-**Referenzen und Quellen** 
-
-Ein besonder Dank an folgende Blogs:  
+Blogs on this subject that I enjoy reading. 
+**References** 
 [Stateless Auth with Express, Passport, Jwt](https://medium.com/@paul.allies/stateless-auth-with-express-passport-jwt-7a55ffae0a5c)
+[Node Js JWT Authentication Tutorial From Scratch](https://appdividend.com/2018/02/07/node-js-jwt-authentication-tutorial-scratch)
+[express-jwt-acl-mongoose-starter](https://github.com/patrickvaler/express-jwt-acl-mongoose-starter/blob/master/src/server.js)
