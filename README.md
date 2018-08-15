@@ -32,7 +32,7 @@ Content-Type: application/json
     "password": "password"
 }
 ```
-###Signin: `/users/signin`
+### Signin: `/users/signin`
 ```
 POST /users/signin
 Host: localhost:3001
