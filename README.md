@@ -18,3 +18,5 @@ User daten werden mit bcrypt verschlüsselt und gegen eine Mongodb Datenbank gep
 
 Ein besonder Dank an folgende Blogs:  
 [Stateless Auth with Express, Passport, Jwt](https://medium.com/@paul.allies/stateless-auth-with-express-passport-jwt-7a55ffae0a5c)
+
+** branch feature/part1
