@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(auth.initialize());
 auth.setJwtStrategy();
 
-// Start Routes
+// Start middelware routes
 app.get('/', (req, res) => {
     res.send('Hello express server');
 });
