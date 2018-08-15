@@ -16,8 +16,8 @@ The development is divided into 3 areas
   Node-acl is used to create access rights for groups and roles.     
   **branch feature/part3**
 
-Blogs on this subject that I enjoy reading. 
-**References** 
-[Stateless Auth with Express, Passport, Jwt](https://medium.com/@paul.allies/stateless-auth-with-express-passport-jwt-7a55ffae0a5c)
-[Node Js JWT Authentication Tutorial From Scratch](https://appdividend.com/2018/02/07/node-js-jwt-authentication-tutorial-scratch)
-[express-jwt-acl-mongoose-starter](https://github.com/patrickvaler/express-jwt-acl-mongoose-starter/blob/master/src/server.js)
+Blogs on this subject that I enjoy reading.    
+**References**    
+[Stateless Auth with Express, Passport, Jwt](https://medium.com/@paul.allies/stateless-auth-with-express-passport-jwt-7a55ffae0a5c)   
+[Node Js JWT Authentication Tutorial From Scratch](https://appdividend.com/2018/02/07/node-js-jwt-authentication-tutorial-scratch)   
+[express-jwt-acl-mongoose-starter](https://github.com/patrickvaler/express-jwt-acl-mongoose-starter)  
