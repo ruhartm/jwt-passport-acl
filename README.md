@@ -19,7 +19,7 @@ The development is divided into 3 areas
 
 
 **References**    
-Blogs on this subject that I enjoy reading.    
+Blogs and repros on this subject that I enjoy reading.    
 
 [Stateless Auth with Express, Passport, Jwt](https://medium.com/@paul.allies/stateless-auth-with-express-passport-jwt-7a55ffae0a5c)   
 [Node Js JWT Authentication Tutorial From Scratch](https://appdividend.com/2018/02/07/node-js-jwt-authentication-tutorial-scratch)   
