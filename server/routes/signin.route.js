@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import express from 'express';
+import config from '../config/config';
 
 const router = express.Router();
 
@@ -11,7 +12,7 @@ router.post('/signin', (req, res) => {
             const opts = {};
             // Signing a token with 1 hour of expiration
             opts.expiresIn = Math.floor(Date.now() / 1000) + (60 * 60);
-            const secret = 'SECRET_KEY'; // normally stored in process.env.secret
+            const { secret } = config.jwt;
             const token = jwt.sign({ email }, secret, opts);
             return res.status(200).json({
                 message: 'Auth Passed',
