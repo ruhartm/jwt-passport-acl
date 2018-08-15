@@ -8,8 +8,8 @@ Stateless Authentication and Authorization Express, Mongoose, Passport, JWT, nod
 
 ## Configuration
 ### server/config/config.js
-To establish a connection to the database, you may configure the database connection parameters in global configuration 
-default is mongodb://localhost:27017/jwtpassauth.
+To establish a connection to the database, you may configure the database connection parameters in the global configuration 
+file. Dfault is mongodb://localhost:27017/jwtpassauth.
 
 ## Authentication
 ### server/config/authenticate.js
