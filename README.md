@@ -1,4 +1,3 @@
-
 # jwt-passport-acl
 Stateless Authentication and Authorization Express, Mongoose, Passport, JWT, node-acl written in ES6
 
@@ -8,8 +7,8 @@ Stateless Authentication and Authorization Express, Mongoose, Passport, JWT, nod
 
 ## Configuration
 ### server/config/config.js
-To establish a connection to the database, you may configure the database connection parameters in the global configuration 
-file. Dfault is mongodb://localhost:27017/jwtpassauth.
+To establish a connection to the database, you may configure the database connection parameters in global configuration 
+default is mongodb://localhost:27017/jwtpassauth.
 
 ## Authentication
 ### server/config/authenticate.js
@@ -44,14 +43,28 @@ Content-Type: application/json
 }
 ```
 
+## Scripts
+**eslint extends eslint-config-airbnb-base**
+```bash
+$ npm run linter 
+contains all of eslint-config-airbnb-base default ESLint rules, including ECMAScript 6+. 
+It requires eslint and eslint-plugin-import
+```
+
+**Development start nodemon**
+```bash
+$ npm run serve
+```
+
 
 
 ## References  
 Blogs and repros about this subject that I enjoy reading.    
 ***
 
-
+**Credits to:**
 * [Stateless Auth with Express, Passport, Jwt](https://medium.com/@paul.allies/stateless-auth-with-express-passport-jwt-7a55ffae0a5c)   
 * [Node Js JWT Authentication Tutorial From Scratch](https://appdividend.com/2018/02/07/node-js-jwt-authentication-tutorial-scratch)   
 * [express-jwt-acl-mongoose-starter from patrickvaler](https://github.com/patrickvaler/express-jwt-acl-mongoose-starter)  
+
 
