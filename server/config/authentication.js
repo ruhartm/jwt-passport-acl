@@ -2,6 +2,7 @@ import passport from 'passport';
 import passportJwt from 'passport-jwt';
 import jwt from 'jsonwebtoken';
 import config from './config';
+import User from '../models/user.model';
 
 // default export
 export default {
@@ -12,11 +13,7 @@ export default {
 };
 
 // destructuring passport-jwt
-const {
-    Strategy: JwtStrategy,
-    ExtractJwt
-} = passportJwt;
-
+const { Strategy: JwtStrategy, ExtractJwt } = passportJwt;
 // destructuring config.jwt.secret
 const { secret } = config.jwt;
 
@@ -37,12 +34,17 @@ function setJwtStrategy() {
         passReqToCallback: true
     };
     const strategy = new JwtStrategy(opts, (req, jwtPayload, done) => {
-        if (jwtPayload.email === 'rh@trueinnovation.de') {
-            console.log('found rudi');
-            return done(null, true);
-        }
-        console.log('not found rudi');
-        return done(null, false);
+        User.findOne({ email: jwtPayload.email }, (err, user) => {
+            if (err) {
+                return done(err, false);
+            }
+            if (user) {
+                done(null, true);
+            } else {
+                done(null, false);
+            }
+            return false;
+        });
     });
 
     passport.use(strategy);
