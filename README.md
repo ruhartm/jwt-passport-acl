@@ -5,26 +5,12 @@ Stateless Authentication and Authorization Express, Mongoose, Passport, JWT, nod
 - [Node.js]("https://nodejs.org/") >= 8.x
 - [MongoDB]("https://docs.mongodb.com/manual/installation/")
 
-## Configuration
-### server/config/config.js
+## Configuration 
+### global configuration `server/config/config.js`
+### Database
 To establish a connection to the database, you may configure the database connection parameters in global configuration 
 default is mongodb://localhost:27017/jwtpassauth.
-
-## Authentication
-### server/config/authentication.js
-Authentication is based on [json web tokens]("https://jwt.io") and passwort-jwt.
-After a successful login the generated token is sent to the requester. To access the protected routes, the requester must sent the token in the header request.  
-We will use the following default exports from authentication.js
-```
-export default {   
-    initialize: () => passport.initialize(),   
-    authenticate: () => passport.authenticate('jwt', { session: config.jwt.session }),   
-    returnSignJwtToken,   
-    setJwtStrategy   
-};
-```
-
-## JWT Secret
+### JWT Secret
 The JWT secret key is set in the global configuration file. Edit them to suit your needs.
 The JWT contains encoded information about the user and a signature that, when decoded, is validated to ensure that the token has not been tampered with.
 
@@ -40,7 +26,7 @@ Content-Type: application/json
     "password": "password"
 }
 ```
-***
+
 ### Signin: `/users/signin`
 ```
 POST /users/signin
@@ -59,7 +45,9 @@ Returned JSON:
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJAci5kZSIsImlhdCI6MTUzNTQ1MTg5NSwiZXhwIjozMDcwOTA3MzkwfQ.NttgaHSkIonyyn4_Ds9bl50ltF4g93CSWLLOFRJelYk"    
 }    
 
-***
+### Authentication `server/config/authentication.js`
+Authentication is based on [json web tokens]("https://jwt.io") and passwort-jwt.
+After a successful login the generated token is sent to the requester. To access the protected routes, the requester must sent the token in the header request.  
 
 ### JWT Protected: `/protected`
 ```
@@ -82,7 +70,8 @@ It requires eslint and eslint-plugin-import
 
 **Development start nodemon**
 ```bash
-$ npm run serve
+$ yarn run serve
+$ yarn run linter
 ```
 
 
