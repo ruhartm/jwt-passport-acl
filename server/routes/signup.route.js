@@ -12,7 +12,6 @@ signup.post('/signup', (req, res) => {
                 err
             });
         }
-
         const user = new User({
             _id: new mongoose.Types.ObjectId(),
             email: req.body.email,

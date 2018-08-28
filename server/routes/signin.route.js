@@ -1,26 +1,38 @@
-import jwt from 'jsonwebtoken';
 import express from 'express';
-import config from '../config/config';
+import bcrypt from 'bcrypt';
+import User from '../models/user.model';
+import authentication from '../config/authentication';
 
 const signin = express.Router();
 
 signin.post('/signin', (req, res) => {
     const { email, password } = req.body;
-    // This lookup would normally be done using a database
-    if (email === 'rh@trueinnovation.de') {
-        if (password === 'password') { // the password compare would normally be done using bcrypt.
-            const opts = {};
-            // Signing a token with 1 hour of expiration
-            opts.expiresIn = Math.floor(Date.now() / 1000) + (60 * 60);
-            const { secret } = config.jwt;
-            const token = jwt.sign({ email }, secret, opts);
-            return res.status(200).json({
-                message: 'Auth Passed',
-                token
+    User.findOne({ email })
+        .exec()
+        .then((user) => {
+            bcrypt.compare(password, user.password, (err, result) => {
+                if (err) {
+                    return res.status(401).json({
+                        failed: 'Unauthorized Access'
+                    });
+                }
+                if (result) {
+                    const token = authentication.returnSignJwtToken(email);
+                    return res.status(200).json({
+                        success: 'Welcome JWT auth Passed',
+                        token
+                    });
+                }
+                return res.status(401).json({
+                    failed: 'Unauthorized Access'
+                });
             });
-        }
-    }
-    return res.status(401).json({ message: 'Auth Failed' });
+        })
+        .catch((error) => {
+            res.status(500).json({
+                error
+            });
+        });
 });
 
 export default signin;

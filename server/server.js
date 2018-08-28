@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
 import config from './config/config';
-import auth from './config/authenticate';
+import authentication from './config/authentication';
 import signin from './routes/signin.route';
 import signup from './routes/signup.route';
 
@@ -26,8 +26,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // setup passport authentification
-app.use(auth.initialize());
-auth.setJwtStrategy();
+app.use(authentication.initialize());
+authentication.setJwtStrategy();
 
 // start Routes
 app.get('/', (req, res) => {
@@ -41,7 +41,7 @@ app.use('/users', signup);
 
 
 // passport authentification route
-app.get('/protected', auth.authenticate(), (req, res) => res.status(200).send('access to protected Route'));
+app.get('/protected', authentication.authenticate(), (req, res) => res.status(200).send('access to protected Route'));
 
 
 app.listen(config.apiPort, () => {
