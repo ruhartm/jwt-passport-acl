@@ -63,15 +63,15 @@ Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJAci5kZSIsImlhdCI6MTUz
 ## Scripts
 **eslint extends eslint-config-airbnb-base**
 ```bash
-$ npm run linter 
-contains all of eslint-config-airbnb-base default ESLint rules, including ECMAScript 6+. 
-It requires eslint and eslint-plugin-import
+$ yarn run linter
 ```
+contains all of eslint-config-airbnb-base default ESLint rules, including ECMAScript 6+.  
+It requires eslint and eslint-plugin-import
+
 
 **Development start nodemon**
 ```bash
 $ yarn run serve
-$ yarn run linter
 ```
 
 
