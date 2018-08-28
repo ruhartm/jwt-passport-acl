@@ -19,7 +19,7 @@ signup.post('/signup', (req, res) => {
         });
         user.save().then(() => {
             res.status(200).json({
-                success: 'user has been created'
+                success: 'User has been created'
             });
         }).catch((error) => {
             res.status(500).json({
