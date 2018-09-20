@@ -4,12 +4,16 @@ import jwt from 'jsonwebtoken';
 import config from './config';
 import User from '../models/user.model';
 
+let userMail = null;
+
 // default export
 export default {
     initialize: () => passport.initialize(),
     authenticate: () => passport.authenticate('jwt', { session: config.jwt.session }),
     returnSignJwtToken,
-    setJwtStrategy
+    setJwtStrategy,
+    getUserMail: () => userMail
+
 };
 
 // destructuring passport-jwt
@@ -18,11 +22,11 @@ const { Strategy: JwtStrategy, ExtractJwt } = passportJwt;
 const { secret } = config.jwt;
 
 // sign and return JWT token
-function returnSignJwtToken(email) {
+function returnSignJwtToken(payload) {
     const opts = {};
     // Signing a token with 1 hour of expiration
     opts.expiresIn = Math.floor(Date.now() / 1000) + (60 * 60);
-    const token = jwt.sign({ email }, secret, opts);
+    const token = jwt.sign(payload, secret, opts);
     return token;
 }
 
@@ -39,6 +43,8 @@ function setJwtStrategy() {
                 return done(err, false);
             }
             if (user) {
+                // eslint-disable-next-line
+                userMail = jwtPayload.email;
                 done(null, true);
             } else {
                 done(null, false);

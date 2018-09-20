@@ -17,7 +17,12 @@ signin.post('/signin', (req, res) => {
                     });
                 }
                 if (result) {
-                    const token = authentication.returnSignJwtToken(email);
+                    const payload = {
+                        id: user._id,
+                        email,
+                        role: user.role
+                    };
+                    const token = authentication.returnSignJwtToken(payload);
                     return res.status(200).json({
                         success: 'Welcome JWT auth Passed',
                         token
